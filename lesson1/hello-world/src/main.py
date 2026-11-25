@@ -11,6 +11,11 @@ def main(page: ft.Page):
         counter.data += 1
         counter.value = str(counter.data)
 
+    def decrement_click(e: ft.Event[ft.FloatingActionButton]):
+        counter.data -= 1
+        counter.value = str(counter.data)
+        counter.update()
+
     page.floating_action_button = ft.FloatingActionButton(
         icon=ft.Icons.ADD, key="increment", on_click=increment_click
     )
